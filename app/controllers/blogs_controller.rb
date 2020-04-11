@@ -43,7 +43,7 @@ class BlogsController < ApplicationController
 
   private
   def set_blog
-    @blog = current_user.Blog.find(params[:id])
+    @blog = current_user.blogs.find(params[:id])
   end
 
   def blog_params
