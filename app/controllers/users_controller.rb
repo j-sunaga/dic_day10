@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  before_action :user_find, only: [:show,:edit,:update]
+
   def new
      @user = User.new
   end

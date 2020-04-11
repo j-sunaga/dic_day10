@@ -1,0 +1,9 @@
+<h4>ユーザ情報</h4>
+
+  <label>ユーザ名</label>
+  <p><%= @user.name %></p>
+
+  <label>Eメール</label>
+  <p><%= @user.email %></p>
+
+  <%= link_to '編集', edit_user_path(@user) %>
