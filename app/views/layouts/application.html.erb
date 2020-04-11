@@ -10,6 +10,32 @@
   </head>
 
   <body>
+
+  <div class="header clearfix">
+      <div class="title clearfix">Blog App</div>
+      <div class="header-menu clearfix">
+      <ul class="header-ul clearfix">
+      <% if current_user %>
+        <li class="header-item clearfix"><%= link_to current_user.name,"/mypage/#{current_user.id}" %></li>
+        <li class="header-item clearfix"><%= link_to 'ブログ一覧', '/blogs' %></li>
+        <li class="header-item clearfix"><%= link_to 'ログアウト', '/logout',method: :delete %></li>
+      <% else %>
+        <li class="header-item clearfix"><%= link_to '新規登録', '/users/sign_up' %></li>
+        <li class="header-item clearfix"><%= link_to 'ログイン', '/users/sign_in' %></li>
+      <% end %>
+      </ul>
+      </div>
+  </div>
+
+  <% flash.each do |key, value| %>
+    <p class="alert alert-<%= key %>">
+      <%= value %>
+    </p>
+  <% end %>
+
+  <div class="main">
     <%= yield %>
+  </div>
+
   </body>
 </html>
