@@ -10,7 +10,7 @@ class BlogsController < ApplicationController
   end
 
   def create
-    @blog = current_user.blogss.build(blog_params)
+    @blog = current_user.blogs.build(blog_params)
     if params[:back]
       render :new
     else
